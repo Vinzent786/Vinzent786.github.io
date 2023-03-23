@@ -167,10 +167,12 @@ const setWidth = (path) => {
     list = path.split('/');
     if (list[list.length - 2] === 'food') {
         game_img.style.minWidth = '30%';
+        game_img.style.minHeight = '30%'
     } else if (list[list.length - 2] === 'materials' || list[list.length - 2] === 'miscellaneous') {
-        game_img.style.minWidth = '50%';
+        game_img.style.minHeight = '50%'
     } else if (list[list.length - 2] === 'drip') {
         game_img.style.minWidth = '35%';
+        game_img.style.minHeight = '35%'
     } else {
         game_img.style.minHeight = '80%';
     }
