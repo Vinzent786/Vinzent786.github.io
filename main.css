@@ -1,0 +1,28 @@
+body {
+   margin: 0;
+}
+
+button:hover {
+   background-color: #90ee90;
+}
+
+button {
+   font-size: 1em;
+   font-family: hylia-serif;
+   min-width: fit-content;
+   overflow: hidden;
+}
+
+.screen_size_error {
+   display: none;
+}
+
+@font-face {
+   font-family: botw-font;
+   src: url("fonts/the-wild-breath-of-zelda/The\ Wild\ Breath\ of\ Zelda.otf");
+}
+
+@font-face {
+   font-family: hylia-serif;
+   src: url("fonts/hylia-serif/Hylia\ Serif\ Beta\ v0-009/HyliaSerifBeta-Regular.otf");
+}

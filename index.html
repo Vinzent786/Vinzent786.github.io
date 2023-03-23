@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Game</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="start.css">
+    <script src="start.js" defer></script>
+</head>
+<div class="overlay"></div>
+<body>
+    <h1>New Game</h1>
+    <h2>Options</h2>
+    <div class="options_container">
+        <div id="mainCharacters">
+            <input type="checkbox" id="main_characters">
+            <label for="main_character">Main Characters</label>
+        </div>
+        <div id="allCharacters">
+            <input type="checkbox" name= "option" id="all_characters">
+            <label for="all_characters">All Characters</label>
+        </div>
+        <div id="Enemies">
+            <input type="checkbox" name="option" id="enemies">
+            <label for="enemies">Enemies</label>
+        </div>
+        <br>
+        <div id="Bows">
+            <input type="checkbox" name="option" id="bows">
+            <label for="bows">Bows</label>
+        </div>
+        <div id="Shields">
+            <input type="checkbox" name="option" id="shields">
+            <label for="shields">Shields</label>
+        </div>
+        <div id="Weapons">
+            <input type="checkbox" name="option" id="weapons">
+            <label for="weapons">Weapons</label>
+        </div>
+        <div id="Drip">
+            <input type="checkbox" name="option" id="drip">
+            <label for="drip">Drip</label>
+        </div>
+        <br>
+        <div id="Creatures">
+            <input type="checkbox" name="option" id="creatures">
+            <label for="creatures">Creatures</label>
+        </div>
+        <div id="Materials">
+            <input type="checkbox" name="option" id="materials">
+            <label for="materials">Materials</label>
+        </div>
+        <div id="Food">
+            <input type="checkbox" name="option" id="food">
+            <label for="food">Food</label>
+        </div>
+        <div id="Shrines">
+            <input type="checkbox" name="option" id="shrines">
+            <label for="shrines">Shrines</label>
+        </div>
+        <br>
+        <div id="Locations">
+            <input type="checkbox" name="option" id="locations">
+            <label for="locations">Locations</label>
+        </div>
+        <div id="Miscellaneous">
+            <input type="checkbox" name="option" id="miscellaneous">
+            <label for="miscellaneous">Miscellaneous</label>
+        </div>
+        <div id="All">
+            <input type="checkbox" name="option" id="all" onclick="SelectAll(this)">
+            <label for="all">All</label>
+        </div>
+        <br>
+        <div id="sugestions_options">
+            <h3>Suggestions</h3>
+            <input type="checkbox" name="suggestions_option" id="suggestions_options" checked>
+            <label for="suggestions_options">on</label>
+        </div>
+        <br>
+        <div id="start_container">
+            <input type="button" name="Start" value= "Start" id="start" onclick="LoadGame()">
+        </div>
+        <br>
+        <div id="image_count">Total Images : 0</div>
+        <br>
+        <div id="options_error">You must select at least one option!</div>
+    </div> 
+    <div class="about_container">
+        <h4>About</h4>
+        <p class="about">This is a picture guessing game themed around Breath of the Wild. The images that will appear are based on the categories above that you can choose from. The suggestions option will try to match answers based off of what you are typing. You are also allowed to finish a game early instead of answering each image. After each game, you have the option to save your scores. Scores are saved to the web browser that you played on.</p>
+        <br><br>
+        <p class="about">I initially had the idea while playing BotW with my boyfriend. We were 100 percenting the game and accumulated quite a bit of knowledge about the items, locations, and other aspects of the game. So, I thought it would be fun to make a game we could play to test how well we knew the game. Also, I do plan on updating this site once Tears of the Kingdom releases and I gather the nessesary assets for that game c:</p>
+        <br><br>
+        <p class="about">The easiest and most convient way to get in contact with me would be through my Discord server. Feel free to report issues, give feedback, or just chat! Click the Discord logo to join, if you want to.</p>
+        <a href="https://discord.gg/NxFuHfvWW7" target="_blank"><img src="images/discord_logo_128.png" alt="Discord Logo"></a>
+        <br>
+        <p class="about">Huge thanks to <a href="https://zelda.fandom.com/" target="_blank">https://zelda.fandom.com</a> and <a href="https://game8.co/" target="_blank">https://game8.co/</a>. Most of the images in the game were scraped from these sites.</p>
+    </div>
+</body>
+</html>

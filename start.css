@@ -1,0 +1,142 @@
+:root {
+    --white: #ffffff;
+    --lightgreen: #90ee90;
+}
+
+html {
+    background-image: url('images/start_background.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; 
+    filter: blur(1px);
+    filter: contrast(1.2);
+    filter: brightness(80%);
+ }
+
+.overlay {
+    background-color: rgba(77, 66, 66, 0.9);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}
+
+body {
+    text-align: center;
+}
+
+a {
+    color: var(--lightgreen);
+}
+
+#content_container {
+    position: relative;
+    display: inline-block;
+    height: min-content;
+    width: 50vw;
+    margin: 0 auto;
+}
+
+#content_container > * {
+    display: block;
+}
+ 
+h1 {
+    text-align: center;
+    color: var(--white);
+    font-size: 4rem;
+    font-family: botw-font;
+}
+
+h2 {
+    text-align: center;
+    color: var(--white);
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-family: hylia-serif;
+}
+
+.options_container {
+    margin: 0 auto;
+    color: var(--white);
+    font-size: 1.3rem;
+    width: 100%;
+    text-align: center;
+}
+
+.options_container > div {
+    padding: .5rem;
+    display: inline-block;
+    font-family: hylia-serif;
+    
+}
+
+h3 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+}
+
+#start_container {
+    min-width: min-content;
+}
+
+#start {
+    width: 5em;
+    margin-top: 30%;
+    margin-bottom: 10%;
+    border: 2px;
+    border-radius: 1em;
+    font-size: 1em;
+    font-family: hylia-serif;
+    overflow: hidden;
+}
+
+#start:hover {
+    background-color: var(--lightgreen);
+}
+
+#options_error {
+    position: absolute;
+    display: none;
+    animation: FadeInFadeOut 3s forwards;
+    transform: translateX(-50%);
+}
+
+@keyframes FadeInFadeOut {
+    0%, 40%, 100% {opacity: 0;}
+    30% {opacity: 1;}
+    
+}
+
+.about_container {
+    margin-top: 8vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 2em;
+    text-align: center;
+}
+
+h4 {
+    font-family: botw-font;
+    color: var(--white);
+    font-size: 3.5rem;
+    margin: 0;
+    margin-bottom: 2rem;
+}
+
+.about {
+    color: var(--white);
+    font-size: 1.3em;
+    text-align: left;
+    margin: auto;
+}
+
+@media (max-width: 1500px) {
+    .about {width: 70%;}
+}
+
+@media (min-width: 1500px) {
+    .about {width: 50%;}
+}

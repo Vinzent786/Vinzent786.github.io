@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="game.css">
+    <script src="game.js" defer></script>
+</head>
+<div class="overlay"></div>
+<body>  
+    <div id="nav_bar">
+        <div class="nav_middle">
+            <button id="quit">Quit</button>
+            <button id="restart">Restart</button>
+            <button id="finish">Finish</button>
+            <button id="save_score">Save Score</button>
+            <button id="show_score">Show Scores</button>
+            <button id="clear_scores">Clear Scores</button>
+            <button id="show_results">Game Results</button>
+        </div>
+        <div class="nav_right">
+            <img id="audio_icon" src="images/audio_icon_off.png" alt="audio_icon">
+            <audio id="audio" src="ambient_music_1.mp3"></audio>
+        </div>
+    </div>
+    <div id="content_container">
+        <div class="grid_container" id="grid_container">
+            <div id="images_left"></div>
+            <div class="game_grid">
+                <div class="img_container">
+                    <img id="game_img" alt="game img">
+                </div>
+                <span id="user_input" contenteditable="True"></span>
+                <button id="enter">Enter</button> 
+                <button id="skip">Skip</button>
+            </div>   
+        </div>
+        <div id="suggestions_container">
+            <h1>suggestions</h1>
+            <div id="suggestions">
+                <div>Suggestions will appear as you start typing</div>
+            </div>
+        </div>
+    </div>
+    <div id="finish_error">You have to submit at least one answer to finish the game</div>
+    <div id="enter_error">You didn't type anything yet</div>
+    <div id="game_results" class="game_results">
+        <div class="answers" id="answers">Results</div>
+        <div class="correct_incorrect" id="correct_incorrect"></div>
+    </div>
+    <div id="retrieve_score_error">There was an error retrieving saved scores :c</div>
+    <div class="scores_container" id="scores_container">
+        <div>Previous Scores</div>
+        <div>(Saved scores do not transfer between web browsers)</div>
+    </div>
+</body>
+</html>
