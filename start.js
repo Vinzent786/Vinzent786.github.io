@@ -23,7 +23,7 @@ function LoadGame() {
     } else if (options_arr.length > 0) {
         document.getElementById('suggestions_options').checked ?sessionStorage.setItem('suggestions_checked', true) : sessionStorage.setItem('suggestions_checked', false);
         sessionStorage.setItem('options', options_arr);
-        window.location.replace('game.html');
+        window.location.replace('game');
     }
 }
 
