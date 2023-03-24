@@ -26,7 +26,7 @@ html::-webkit-scrollbar {
         left: 50%;
         transform: translateX(-50%);
         width: 100dvw;
-        top: 63dvh;
+        top: calc(50dvh + 7.5rem);;
     }
     .game_results {
         margin: 43% auto;
