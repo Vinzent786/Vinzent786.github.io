@@ -315,7 +315,7 @@ restart.addEventListener('click', () => {
 
 //Brings user back to index.html
 quit.addEventListener('click', () => {
-    window.location = 'index.html';
+    window.location = 'index';
 });
 
 
