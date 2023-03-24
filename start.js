@@ -1,4 +1,3 @@
-console.log('test);
 
 ///Sets game options in browser's session storage then loads the game
 function LoadGame() {
