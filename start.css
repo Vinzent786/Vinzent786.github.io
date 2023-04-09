@@ -133,6 +133,23 @@ h4 {
     margin: auto;
 }
 
+.browser_alert {
+    background-color: var(--lightgreen);
+    font-size: 1.5rem;
+}
+
+.remove_alert {
+    font-size: 2rem;
+    float: right;
+    margin-right: 7%;
+    margin-left: 7%;
+    font-weight: bolder;
+}
+
+.remove_alert:hover {
+    cursor: pointer;
+}
+
 @media (max-width: 1500px) {
     .about {width: 70%;}
 }

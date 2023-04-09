@@ -7,10 +7,26 @@
     <title>Hyrule Picture Guesser</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/hylian_shield_icon.ico">
     <link rel="stylesheet" href="main.css?v=1.1">
-    <link rel="stylesheet" href="start.css?v=1.2">
+    <link rel="stylesheet" href="start.css?v=1.3">
     <script src="start.js?v=1.2" defer></script>
 </head>
 <div class="overlay"></div>
+<div class="browser_alert" id="browser_alert">
+    <span class="remove_alert" onclick="this.parentElement.style.display='none'">&times;</span>
+    Your browser is not currently supported. So, the site may not work properly :c
+</div>
+<script>
+    let userAgentString = navigator.userAgent;
+    let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+    let safariAgent = userAgentString.indexOf('Safari') > -1;
+    if ((chromeAgent) && (safariAgent)) safariAgent = false;
+    if (safariAgent === true) {
+        document.getElementById('browser_alert').style.display = 'block';
+        console.log(`I really hope a damn, lying yook isn't reading this... Also, the current browser in use is : \n ${userAgentString}`);
+    } else {
+        document.getElementById('browser_alert').style.display = 'none';
+    }
+</script>
 <body>
     <h1>New Game</h1>
     <h2>Options</h2>
