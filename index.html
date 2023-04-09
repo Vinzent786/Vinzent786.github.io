@@ -12,7 +12,7 @@
 </head>
 <div class="overlay"></div>
 <div class="browser_alert" id="browser_alert">
-    <!-- Your browser is not currently supported. So, the site may not work properly :c -->
+    Your browser is not currently supported. So, the site may not work properly :c
     <span class="remove_alert" onclick="this.parentElement.style.display='none'">&times;</span>
 </div>
 <script>
@@ -21,7 +21,7 @@
     let chromeAgent = userAgentString.indexOf("Chrome") > -1;
     let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
     let operaAgent = userAgentString.indexOf("OP") > -1;
-    let safariAgent = userAgentString.indexOf('Safari') > -1;
+    let safariAgent = userAgentString.indexOf("Safari") > -1;
     let edge = userAgentString.indexOf("edge") > -1;
     let chEdge = userAgentString.indexOf("edg/") > -1;
     if ((chromeAgent) && (safariAgent)) safariAgent = false;
@@ -30,7 +30,6 @@
         browser_alert.style.display = 'none';
     } else {
         browser_alert.style.display = 'block';
-        browser_alert.innerText = `Your browser is not currently supported. So, the site may not work properly :c\n Current browser: ${userAgentString}`
     }
 </script>
 <body>
