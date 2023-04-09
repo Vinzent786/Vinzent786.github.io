@@ -135,13 +135,13 @@ h4 {
 
 .browser_alert {
     background-color: var(--lightgreen);
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .remove_alert {
     font-size: 2rem;
     float: right;
-    margin-right: 7%;
+    margin-right: 1%;
     margin-left: 7%;
     font-weight: bolder;
 }
