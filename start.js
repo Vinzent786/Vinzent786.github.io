@@ -24,7 +24,7 @@ function LoadGame() {
         document.getElementById('suggestions_options').checked ? sessionStorage.setItem('suggestions_checked', true) : sessionStorage.setItem('suggestions_checked', false);
         sessionStorage.setItem('img_count', image_slider.value); 
         sessionStorage.setItem('options', options_arr);
-        window.location.replace('game.html');
+        window.location.replace('game');
     }
 }
 
