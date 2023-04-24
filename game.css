@@ -228,7 +228,7 @@ div.img_container {
 }
 #enter, #skip {
     grid-row-start: 4;
-    outline: .1em solid var(--black);
+    border-radius: .3em;
 }
 
 #enter {

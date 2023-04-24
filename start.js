@@ -21,9 +21,10 @@ function LoadGame() {
             options_error.style.display = 'none'
         }, 3000);
     } else if (options_arr.length > 0) {
-        document.getElementById('suggestions_options').checked ?sessionStorage.setItem('suggestions_checked', true) : sessionStorage.setItem('suggestions_checked', false);
+        document.getElementById('suggestions_options').checked ? sessionStorage.setItem('suggestions_checked', true) : sessionStorage.setItem('suggestions_checked', false);
+        sessionStorage.setItem('img_count', image_slider.value); 
         sessionStorage.setItem('options', options_arr);
-        window.location.replace('game');
+        window.location.replace('game.html');
     }
 }
 
@@ -49,14 +50,96 @@ const miscellaneous = document.getElementById('miscellaneous');
 const shields = document.getElementById('shields');
 const weapons = document.getElementById('weapons');
 const all = document.getElementById('all');
-//This is for the total image counter on screen
 const image_count = document.getElementById('image_count');
+const image_slider = document.getElementById('image_slider');
+const image_count_field = document.getElementById('image_count_field');
 let total = 0;
 
 //Changes the total image counter
 const change_total = (id, num) => {
     id.checked ? total += num : total -= num;
-    return image_count.innerText = `Total Images: ${total}`;
+    change_slider(total);
+}
+
+//Updates the placeholder for user input based on slider value
+const update_image_count_field = () => {
+    image_count_field.value = '';
+    return image_count_field.placeholder = image_slider.value;
+}
+
+//Updates image count displayed to user
+const update_image_count = (num) => {
+    return image_count.innerText = `Number of Images: ${num}`;
+}
+
+//Controlling user's image count input and updating slider to it's value
+image_count_field.addEventListener('keydown', (event) => {
+    let boxes = document.querySelectorAll('input[type="checkbox"]:not(#suggestions_options)');
+    let boxes_checked = 0;
+    for (let i = 0; i < boxes.length; i++) {
+        if (boxes[i].checked) boxes_checked += 1; 
+    }
+    if (boxes_checked !== 0) {
+        if (event.key === 'Backspace') {
+            image_count_field.addEventListener('keyup', () => {
+            if (image_count_field.value === '') {
+                image_count_field.placeholder = 1;
+                image_slider.value = 1;
+                update_image_count(image_slider.value);
+            } else {
+                image_slider.value = image_count_field.value;
+                update_image_count(image_slider.value);
+            }
+        });
+        } else if (event.key === 0 && image_count_field.value === '') {
+            event.preventDefault();
+        } else {
+            const good_chars = /[0-9]/g;
+            let input = event.key.match(good_chars); 
+            if (input !== null) {
+                let total_input = image_count_field.value + input;
+                total_input = parseInt(total_input);
+                let max_value = parseInt(image_slider.max);
+                if (total_input <= max_value) {
+                    image_slider.value = image_count_field.value + input;
+                    update_image_count(image_slider.value);
+                } else {
+                    event.preventDefault();
+                    image_count_field.value = total_input = max_value;
+                    image_slider.value = max_value;
+                    update_image_count(image_slider.value);
+                }
+            } else {
+                event.preventDefault();
+            }
+        }
+    } else {
+        event.preventDefault();
+    }
+});
+
+//Sets the min, max, step, and value attributes of slider. Also, sets the initial Image Count
+const change_slider = (num) => {
+    let max = num;
+    let min = 1;
+    image_slider.setAttribute('min', min);
+    image_slider.setAttribute('max', max);
+    image_slider.setAttribute('value', max);
+    image_slider.value = max;
+    update_image_count_field();
+    //Resets input field to nothing and updates placeholder to 0 when no boxes are checked
+    if (num === 0) {
+        document.getElementById('image_count_field').value = '';
+        document.getElementById('image_count_field').setAttribute('placeholder', 0);
+
+    }
+    update_image_count(num);
+}
+
+//Gets value of thumb on range slider
+const slide = (value) => {
+    update_image_count(value);
+    update_image_count_field();
 }
 
 main_characters.addEventListener('click', () => {
@@ -138,10 +221,10 @@ all.addEventListener('click', () => {
         main_characters.checked = false;
         main_characters.disabled = true;
         total += 2014;
-        image_count.innerText = `Total Images: ${total}`;
+        change_slider(total);
     } else if (!all.checked) {
         main_characters.disabled = false;
-        image_count.innerText = `Total Images: ${total}`;
+        change_slider(total);
     }
 });
 

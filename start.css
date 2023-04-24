@@ -67,11 +67,14 @@ h2 {
     text-align: center;
 }
 
-.options_container > div {
+.options_container > div, .options_container > p {
     padding: .5rem;
     display: inline-block;
-    font-family: hylia-serif;
-    
+    font-family: hylia-serif; 
+}
+
+#image_count {
+    font-size: 1.2em;
 }
 
 h3 {
@@ -88,7 +91,7 @@ h3 {
     margin-top: 30%;
     margin-bottom: 10%;
     border: 2px;
-    border-radius: 1em;
+    border-radius: .2em;
     font-size: 1em;
     font-family: hylia-serif;
     overflow: hidden;
@@ -96,6 +99,39 @@ h3 {
 
 #start:hover {
     background-color: var(--lightgreen);
+}
+
+#image_slider {
+    appearance: none;
+    background-color: lightblue;
+    border-radius: 5rem;
+    height: .7rem;
+}
+
+#image_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--lightgreen);
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+#image_slider::-moz-range-thumb {
+    background-color: var(--lightgreen);
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+#image_count_field {
+    width: 2rem;
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+    border-radius: 20%;
+    text-align: center;
 }
 
 #options_error {
