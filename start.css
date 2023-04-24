@@ -132,6 +132,7 @@ h3 {
     border: 1px solid black;
     border-radius: 20%;
     text-align: center;
+    font-weight: bold;
 }
 
 #options_error {
