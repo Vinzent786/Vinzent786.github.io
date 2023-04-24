@@ -179,7 +179,7 @@ creatures.addEventListener('click', () => {
 });
 
 drip.addEventListener('click', () => {
-    change_total(drip, 120);
+    change_total(drip, 119);
 });
 
 shrines.addEventListener('click', () => {
@@ -220,7 +220,7 @@ all.addEventListener('click', () => {
     if (all.checked) {
         main_characters.checked = false;
         main_characters.disabled = true;
-        total += 2014;
+        total += 2013;
         change_slider(total);
     } else if (!all.checked) {
         main_characters.disabled = false;
@@ -228,4 +228,4 @@ all.addEventListener('click', () => {
     }
 });
 
-// 2040 files, 2014 without main characters
+// 2039 files, 2013 without main characters
