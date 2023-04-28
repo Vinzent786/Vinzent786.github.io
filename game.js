@@ -111,7 +111,7 @@ function createGameOptions() {
                 delete temp_obj[key];
                 break;
             } 
-            if (i >= img_count) break; //This line is not redundant and is needed to break out of loop
+            if (i >= img_count) break; //Prevents arrays being filled if the iteration goes over the image count
         }
    } while (i < img_count);
     //Checks for empty arrays and removes them
