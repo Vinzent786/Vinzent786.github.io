@@ -101,19 +101,26 @@ function createGameOptions() {
     }
     //Creating game options object values
     let i = 0;
-    while (i < img_count) {
+    do {
         for (let key in temp_obj) {
-            if (temp_obj[key].length === 0) break;
             let rand_num = Math.floor(Math.random() * temp_obj[key].length);
             game_options[key].push(temp_obj[key][rand_num]);
-            temp_obj[key].splice(rand_num, 1);
+            if (temp_obj[key].length > 0) temp_obj[key].splice(rand_num, 1);
             i++;
-            if (i >= img_count) break;
+            if (temp_obj[key].length === 0) {
+                delete temp_obj[key];
+                break;
+            } 
+            if (i >= img_count) break; //This line is not redundant and is needed to break out of loop
         }
-    }
+   } while (i < img_count);
     //Checks for empty arrays and removes them
     for (let key in game_options) {
         if (game_options[key].length === 0) delete game_options[key];
+    }
+    let x = 0;
+    for (let key in game_options) {
+        x += game_options[key].length
     }
 }
 createGameOptions();
