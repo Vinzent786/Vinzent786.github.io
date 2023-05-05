@@ -194,3 +194,7 @@ h4 {
 @media (min-width: 1500px) {
     .about {width: 50%;}
 }
+
+@media (max-width: 800px) {
+    #image_count_field {display: none;}
+}
